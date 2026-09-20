@@ -653,11 +653,55 @@ iframe {
   font-weight:700}
 /* These legacy pages each have one primary page title. Center it without
    changing the appearance of their subsequent content headings. */
-body[data-page="church-partnerships"] .page-section h1,
+body[data-page="partnerships"] .page-section h1,
 body[data-page="1-on-1-friendships"] .page-section h1 {text-align:center}
-body[data-page="church-partnerships"] .legacy-layout {padding-top:30px}
+body[data-page="partnerships"] .legacy-layout {
+  padding-top:30px;
+  padding-bottom:28px}
 @media (max-width:767px) {
-  body[data-page="church-partnerships"] .legacy-layout {padding-top:0}
+  body[data-page="partnerships"] .legacy-layout {
+    padding-top:0;
+    padding-bottom:20px}
+}
+.partner-section-inner {
+  max-width:1097px;
+  margin:auto;
+  padding:40px 4vw 48px}
+body[data-page="partnerships"] .partner-section .partner-section-title {
+  color:#707070;
+  font-size:calc(17px + 2.76vw);
+  line-height:.908;
+  margin:0 0 34px;
+  text-align:center}
+.partner-card {
+  display:grid;
+  grid-template-columns:minmax(220px,320px) minmax(0,1fr);
+  align-items:center;
+  gap:clamp(32px,6vw,82px);
+  padding:clamp(28px,4vw,48px);
+  background:#fff;
+  box-shadow:0 8px 24px #00000012}
+.partner-logo {
+  display:block}
+.partner-logo img {
+  display:block;
+  width:100%;
+  height:auto}
+.partner-details h3 {
+  color:var(--heading-burgundy);
+  margin:0 0 14px}
+.partner-details p {
+  margin:0;
+  font-size:clamp(1.05rem,1.5vw,1.25rem);
+  line-height:1.7}
+@media (max-width:767px) {
+  body[data-page="partnerships"] .partner-section .partner-section-title {
+    font-size:calc(16px + .0276 * min(100vh,900px));
+    line-height:.908}
+  .partner-section-inner {padding:32px 6vw 40px}
+  .partner-card {grid-template-columns:1fr; gap:28px; padding:28px}
+  .partner-logo {max-width:300px; margin:auto}
+  .partner-details {text-align:center}
 }
 .photo-library-banner {
   display:grid;
