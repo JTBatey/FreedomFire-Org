@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Find your page — Freedom Fire</title>
+  <style>body{font:18px/1.6 system-ui,sans-serif;max-width:42rem;margin:12vh auto;padding:24px;color:#383838}h1,a{color:#8f0002}</style>
+</head>
+<body>
+  <h1>Looking for a Freedom Fire page?</h1>
+  <p id="message">This address may have changed. Please visit our homepage to find it.</p>
+  <p><a id="destination" href="/">Visit the homepage</a></p>
+  <noscript><p>JavaScript is needed to follow an old bookmark automatically.</p></noscript>
+  <!-- Compatibility only: these maps match docs/page-map.json and legacy-queries.json. -->
+  <script>
+  const legacyPages = {
+  "/": "index.html",
+  "/1-on-1-friendships": "1-on-1-friendships.html",
+  "/blog/1253-2": "blog/1253-2.html",
+  "/blog/13-years-and-counting": "blog/13-years-and-counting.html",
+  "/blog/1st-annual-talent-show-hosted-by-antioch-community-church-freedom-fire-urban-ministries": "blog/1st-annual-talent-show-hosted-by-antioch-community-church-freedom-fire-urban-ministries.html",
+  "/blog/2008-passion-award": "blog/2008-passion-award.html",
+  "/blog/964": "blog/964.html",
+  "/blog/a-big-house": "blog/a-big-house.html",
+  "/blog/affirmation-of-faith": "blog/affirmation-of-faith.html",
+  "/blog/ben-there": "blog/ben-there.html",
+  "/blog/bloghomegirls": "blog/bloghomegirls.html",
+  "/blog/brocks-homies": "blog/brocks-homies.html",
+  "/blog/camp-shalom-summer-2012": "blog/camp-shalom-summer-2012.html",
+  "/blog/category/Blog/page/2": "blog/category-blog-page-2.html",
+  "/blog/category/Blog": "blog/category-blog.html",
+  "/blog/category/Event": "blog/category-event.html",
+  "/blog/category/Slider": "blog/category-slider.html",
+  "/blog/category/Stories": "blog/category-stories.html",
+  "/blog/category/Uncategorized/page/2": "blog/category-uncategorized-page-2.html",
+  "/blog/category/Uncategorized": "blog/category-uncategorized.html",
+  "/blog/category/Video": "blog/category-video.html",
+  "/blog/childrens-outreach": "blog/childrens-outreach.html",
+  "/blog/church-partnerships": "blog/church-partnerships.html",
+  "/blog/cindy-and-her-homegirls": "blog/cindy-and-her-homegirls.html",
+  "/blog/contact-us": "blog/contact-us.html",
+  "/blog/daily-life": "blog/daily-life.html",
+  "/blog/dave-and-the-boys": "blog/dave-and-the-boys.html",
+  "/blog/drug-deals-in-church": "blog/drug-deals-in-church.html",
+  "/blog/education": "blog/education.html",
+  "/blog/freedom-fire-20-years-lots-of-testimonies": "blog/freedom-fire-20-years-lots-of-testimonies.html",
+  "/blog/freedom-fire-wins-2007-passion-award": "blog/freedom-fire-wins-2007-passion-award.html",
+  "/blog/freedomfirecamp": "blog/freedomfirecamp.html",
+  "/blog/fruit-that-lasts": "blog/fruit-that-lasts.html",
+  "/blog/future-golfers-look-out": "blog/future-golfers-look-out.html",
+  "/blog/giving-is-getting": "blog/giving-is-getting.html",
+  "/blog/group-ministry": "blog/group-ministry.html",
+  "/blog/hello-world": "blog/hello-world.html",
+  "/blog/i-dont-want-to-die-a-nothing": "blog/i-dont-want-to-die-a-nothing.html",
+  "/blog/it-pays-to-stick-around": "blog/it-pays-to-stick-around.html",
+  "/blog/keyshawn-and-ryan": "blog/keyshawn-and-ryan.html",
+  "/blog/loving-means-doing": "blog/loving-means-doing.html",
+  "/blog/making-a-memory-2": "blog/making-a-memory-2.html",
+  "/blog/marriage-advance": "blog/marriage-advance.html",
+  "/blog/married-in-the-hood": "blog/married-in-the-hood.html",
+  "/blog/new-experiences-in-the-wings": "blog/new-experiences-in-the-wings.html",
+  "/blog/new-post": "blog/new-post.html",
+  "/blog/nothing-in-common-so-what": "blog/nothing-in-common-so-what.html",
+  "/blog/one-on-one-friendships": "blog/one-on-one-friendships.html",
+  "/blog/our-story": "blog/our-story.html",
+  "/blog/outreach": "blog/outreach.html",
+  "/blog/page/2": "blog/page-2.html",
+  "/blog/page/3": "blog/page-3.html",
+  "/blog/prosecutor-of-mercy": "blog/prosecutor-of-mercy.html",
+  "/blog/rain-or-shine-worship-wagon-rolls-in-church-to-the-homeless": "blog/rain-or-shine-worship-wagon-rolls-in-church-to-the-homeless.html",
+  "/blog/regine-remix": "blog/regine-remix.html",
+  "/blog/reward-trip-to-shalom": "blog/reward-trip-to-shalom.html",
+  "/blog/scripture-and-hoops-training-fall-2014": "blog/scripture-and-hoops-training-fall-2014.html",
+  "/blog/table-rock-lake-summer-2011": "blog/table-rock-lake-summer-2011.html",
+  "/blog/tag/Antioch+Community+Church": "blog/tag-antioch-community-church.html",
+  "/blog/tag/Benefit+Show": "blog/tag-benefit-show.html",
+  "/blog/tag/Event": "blog/tag-event.html",
+  "/blog/tag/For+Every+Fight+Wo": "blog/tag-for-every-fight-wo.html",
+  "/blog/tag/Friday+Night+Outreach": "blog/tag-friday-night-outreach.html",
+  "/blog/tag/Leukemia+Kansas+City": "blog/tag-leukemia-kansas-city.html",
+  "/blog/tag/Magacians": "blog/tag-magacians.html",
+  "/blog/tag/Rappers": "blog/tag-rappers.html",
+  "/blog/tag/Singers": "blog/tag-singers.html",
+  "/blog/tag/Talent+Show": "blog/tag-talent-show.html",
+  "/blog/tag/Wear+Orange": "blog/tag-wear-orange.html",
+  "/blog/tag/camp+shalom": "blog/tag-camp-shalom.html",
+  "/blog/tag/camp": "blog/tag-camp.html",
+  "/blog/tag/christian+ministry": "blog/tag-christian-ministry.html",
+  "/blog/tag/east+side+of+kansas+city": "blog/tag-east-side-of-kansas-city.html",
+  "/blog/tag/freedom+fire": "blog/tag-freedom-fire.html",
+  "/blog/tag/kansas+city+ministry": "blog/tag-kansas-city-ministry.html",
+  "/blog/tag/kids": "blog/tag-kids.html",
+  "/blog/tag/musicians": "blog/tag-musicians.html",
+  "/blog/tag/poetry": "blog/tag-poetry.html",
+  "/blog/tag/reaching+kids+for+jesus": "blog/tag-reaching-kids-for-jesus.html",
+  "/blog/tag/school": "blog/tag-school.html",
+  "/blog/tag/shalom": "blog/tag-shalom.html",
+  "/blog/tag/summer": "blog/tag-summer.html",
+  "/blog/tag/urban+ministry": "blog/tag-urban-ministry.html",
+  "/blog/tag/video": "blog/tag-video.html",
+  "/blog/tag/youtube": "blog/tag-youtube.html",
+  "/blog/teamwork": "blog/teamwork.html",
+  "/blog/tha-reformerz": "blog/tha-reformerz.html",
+  "/blog/the-mceldowneys": "blog/the-mceldowneys.html",
+  "/blog/the-ripple-effect": "blog/the-ripple-effect.html",
+  "/blog/the-soldiers-of-god-2018": "blog/the-soldiers-of-god-2018.html",
+  "/blog/thursdays-with-manda": "blog/thursdays-with-manda.html",
+  "/blog/true-giving": "blog/true-giving.html",
+  "/blog/videos": "blog/videos.html",
+  "/blog/williams-story": "blog/williams-story.html",
+  "/blog/with-my-last-breath": "blog/with-my-last-breath.html",
+  "/blog": "blog/index.html",
+  "/blue-eye-retreat-center": "blue-eye-retreat-center.html",
+  "/church-partnerships": "church-partnerships.html",
+  "/church": "church.html",
+  "/contact": "contact.html",
+  "/donate-1": "donate.html",
+  "/education": "education.html",
+  "/educational-videos": "educational-videos.html",
+  "/freedom-church-downtown": "freedom-church-downtown.html",
+  "/freedom-church-southside": "freedom-church-southside.html",
+  "/freedom-works": "freedom-works.html",
+  "/freedomfirevideos": "freedom-fire-videos.html",
+  "/fuel-the-fire": "fuel-the-fire.html",
+  "/home": "index.html",
+  "/locations-1": "locations.html",
+  "/lunch-learn": "lunch-learn.html",
+  "/ourstaff": "staff.html",
+  "/outreach": "outreach.html",
+  "/pdfs": "documents.html",
+  "/photo-library": "photo-library.html",
+  "/shalom-retreat-center": "shalom-retreat-center.html",
+  "/testimonies": "testimonies.html",
+  "/vision-mission": "vision-mission.html",
+  "/volunteer": "volunteer.html",
+  "/worship-wagon": "worship-wagon.html"
+};
+  const legacyQueries = [
+  {
+    "path": "/blog",
+    "query": "offset=1447769631000&category=Blog",
+    "target": "blog/category-blog-page-2.html"
+  },
+  {
+    "path": "/blog",
+    "query": "offset=1447769631000",
+    "target": "blog/page-2.html"
+  },
+  {
+    "path": "/blog",
+    "query": "offset=1326825049000&category=Uncategorized",
+    "target": "blog/category-uncategorized-page-2.html"
+  },
+  {
+    "path": "/blog",
+    "query": "offset=1332794033000",
+    "target": "blog/page-3.html"
+  }
+];
+  function resolveLegacy(pathname, search) {
+    let path;
+    try { path = decodeURIComponent(pathname).replace(/\/index\.html$/, '').replace(/\/+$/, '') || '/'; }
+    catch { return null; }
+    const params = new URLSearchParams(search);
+    for (const item of legacyQueries) {
+      if ((path === item.path || path.endsWith(item.path)) &&
+          [...new URLSearchParams(item.query)].every(([key, value]) => params.get(key) === value)) {
+        return path.slice(0, -item.path.length) + '/' + item.target;
+      }
+    }
+    for (const [oldPath, newPath] of Object.entries(legacyPages).sort((a,b) => b[0].length-a[0].length)) {
+      if (oldPath !== '/' && (path === oldPath || path.endsWith(oldPath))) {
+        return path.slice(0, -oldPath.length) + '/' + newPath;
+      }
+    }
+    return path === '/' ? '/index.html' : null;
+  }
+  const target = resolveLegacy(location.pathname, location.search);
+  if (target && target !== location.pathname) {
+    const destination = target + location.search + location.hash;
+    document.getElementById('message').textContent = 'This page has moved. Taking you to its new address…';
+    const link = document.getElementById('destination');
+    link.href = destination;
+    link.textContent = 'Open the page';
+    location.replace(destination);
+  }
+  </script>
+</body>
+</html>
