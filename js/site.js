@@ -1,23 +1,4 @@
 /* Navigation, accessible gallery lightbox and explicit email draft fallback. */
-// Old Squarespace archive bookmarks can reach blog/index.html directly, so
-// handle their query-string pagination here as well as in the 404 fallback.
-if (/\/blog\/(?:index\.html)?$/.test(location.pathname)) {
-  const params = new URLSearchParams(location.search);
-  const oldArchives = [
-    ['1447769631000', 'Blog', 'category-blog-page-2.html'],
-    ['1326825049000', 'Uncategorized', 'category-uncategorized-page-2.html'],
-    ['1447769631000', null, 'page-2.html'],
-    ['1332794033000', null, 'page-3.html']
-  ];
-  const archive = oldArchives.find(([offset, category]) =>
-    params.get('offset') === offset && params.get('category') === category);
-  if (archive) {
-    const destination = new URL(archive[2], location.href);
-    destination.search = location.search;
-    destination.hash = location.hash;
-    location.replace(destination.href);
-  }
-}
 const header = document.querySelector('.site-header');
 const toggle = document.querySelector('.menu-toggle');
 const folders = [...document.querySelectorAll('.nav-folder')];

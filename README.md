@@ -10,7 +10,6 @@ build step, package manager, or Squarespace dependency.
 | --- | --- |
 | Homepage | `index.html` |
 | A main page | Its named `.html` file here, such as `staff.html` or `volunteer.html` |
-| A blog post or archive | `blog/` |
 | Photos and logos | `assets/images/` |
 | Locally hosted fonts and licenses | `assets/fonts/` |
 | Downloadable PDFs and Word files | `assets/documents/` |

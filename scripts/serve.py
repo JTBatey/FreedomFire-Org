@@ -1,13 +1,12 @@
 """Optional local preview. Serves the editable files directly; no build step."""
 from pathlib import Path
-from urllib.parse import unquote, urlsplit, parse_qs
+from urllib.parse import unquote, urlsplit
 import functools
 import http.server
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = json.loads((ROOT / 'docs/page-map.json').read_text())
-QUERIES = json.loads((ROOT / 'docs/legacy-queries.json').read_text())
 
 
 class PreviewHandler(http.server.SimpleHTTPRequestHandler):
@@ -15,13 +14,7 @@ class PreviewHandler(http.server.SimpleHTTPRequestHandler):
         url = urlsplit(self.path)
         path = unquote(url.path)
         route = path.removesuffix('/index.html').rstrip('/') or '/'
-        params = parse_qs(url.query)
-        target = None
-        for item in QUERIES:
-            if route == item['path'] and all(params.get(k) == v for k, v in parse_qs(item['query']).items()):
-                target = item['target']
-                break
-        target = target or PAGES.get(route)
+        target = PAGES.get(route)
         if target and path != '/' + target and route != '/':
             self.send_response(302)
             self.send_header('Location', '/' + target + ('?' + url.query if url.query else ''))

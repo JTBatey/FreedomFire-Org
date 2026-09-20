@@ -28,7 +28,7 @@ class PageParser(HTMLParser):
 
 def check():
     errors = []
-    pages = sorted(ROOT.glob('*.html')) + sorted((ROOT / 'blog').glob('*.html'))
+    pages = sorted(ROOT.glob('*.html'))
     shared = {}
 
     def target_for(page, reference):
@@ -86,9 +86,6 @@ def check():
     embedded = re.search(r'const legacyPages = (.*?);\n', not_found, re.S)
     if not embedded or json.loads(embedded[1]) != page_map:
         errors.append('404.html legacy map differs from docs/page-map.json')
-    queries = re.search(r'const legacyQueries = (.*?);\n', not_found, re.S)
-    if not queries or json.loads(queries[1]) != json.loads((ROOT / 'docs/legacy-queries.json').read_text()):
-        errors.append('404.html query map differs from docs/legacy-queries.json')
     for route, target in page_map.items():
         if not (ROOT / target).is_file():
             errors.append(f'Legacy route {route}: missing {target}')

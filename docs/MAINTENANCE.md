@@ -1,13 +1,13 @@
 # Notes for website maintainers
 
-The directly editable HTML files at the project root and in `blog/` are the only
-page copies. Ordinary text edits require only saving and refreshing the browser.
+The directly editable HTML files at the project root are the only page copies.
+Ordinary text edits require only saving and refreshing the browser.
 
 ## Shared layout
 
 Each page is a complete document. Marked SHARED HEADER / SHARED FOOTER regions
-should match, except for the extra `../` needed by blog pages. The optional
-checker compares these regions to prevent site-wide changes from missing a page.
+should match. The optional checker compares these regions to prevent site-wide
+changes from missing a page.
 
 ## Assets
 
@@ -19,11 +19,9 @@ Videos remain external embeds, so there is no empty video folder. Update
 
 ## Old public URLs
 
-`page-map.json` maps the previous routes to the new files. `legacy-queries.json`
-records four original archive-pagination query URLs. The local preview server
-redirects these old routes. Website navigation uses the new relative HTML links.
-Because the blog index still exists at `/blog/`, `js/site.js` also handles those
-four query-string bookmarks without waiting for a missing-page response.
+`page-map.json` maps retained previous routes to the new files. The local
+preview server redirects these old routes. Website navigation uses the new
+relative HTML links.
 
 GitHub Pages supports [a custom 404 page](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site).
 The included `404.html` handles missing routes. It

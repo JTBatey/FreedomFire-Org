@@ -5,13 +5,11 @@ Squarespace account change, or DNS change was performed.
 
 ## Migrated
 
-- 24 main pages, including staff, ministries, network, locations, videos,
+- Main pages, including staff, ministries, network, locations, videos,
   volunteering, contact, donation, and older event pages.
-- 56 individual blog posts, 34 initial blog/category/tag listing pages, and
-  4 additional pagination pages: 118 directly editable pages in total.
-- 119 HTML files including the old-link/not-found helper `404.html`.
-- 169 original local assets: photographs, logos, favicon, donation-button image,
-  and linked PDF/Word documents. All downloads completed successfully.
+- The old-link/not-found helper `404.html`.
+- Original local assets: photographs, logos, favicon, donation-button image,
+  and linked PDF/Word documents.
 - Shared page shell, navigation and footer; plain CSS and JavaScript.
 
 ## Verified
@@ -30,9 +28,6 @@ Squarespace account change, or DNS change was performed.
   creates an explicit, correctly addressed email-draft link; nothing was sent.
 - The volunteer form accepts a phone number in its “EMAIL OR PHONE” field.
 - Gallery images open in a modal and close with focus returning to the thumbnail.
-- Archive pagination exposes older/newer posts locally, including the third blog
-  page. Image dimensions are included in the HTML to prevent layout jumps while
-  lazy-loading archive photographs.
 - The original PayPal hosted-button destination and button id were retained.
   No donation was submitted, and payment completion was not tested.
 
@@ -48,22 +43,18 @@ Squarespace account change, or DNS change was performed.
    have been replaced by locally hosted Figtree and Jost. Their complete SIL
    Open Font Licenses are included in `assets/fonts/`. No Adobe/Typekit requests,
    paid font-hosting subscription, or internet connection for fonts is needed.
-4. **Visual acceptance:** the main visual layout has been reproduced closely;
-   this is not a pixel-perfect certification of every page or historic blog
-   entry. Review imagery, text spacing, older galleries and long staff bios at
+4. **Visual acceptance:** the main visual layout has been reproduced closely.
+   Review imagery, text spacing, galleries and long staff bios at
    your preferred device sizes before calling version 1 approved.
    Social metadata is prepared for the eventual `www.freedomfire.org` domain;
    social cards cannot resolve to this local-only preview from outside your Mac.
-5. **Historical content:** old posts, dates, literal legacy embed shortcodes and
-   already-empty entries were preserved from the public source. Live external
-   partner links and historic video availability may have changed independently.
 
 ## Repairs made during migration
 
 - Audited heading colors against the live original on all 24 main pages.
   Restored 53 burgundy level-two headings using the original computed color
   `rgba(143, 0, 2, 0.89)`. Preserved intentionally gray page titles and white
-  headings on colored backgrounds; matched staff-role and blog-heading grays.
+  headings on colored backgrounds; matched staff-role grays.
   Section palettes are now explicit `data-color-theme` attributes in source HTML.
   Browser comparison found no remaining main-page heading-color mismatches.
 - Repointed the obsolete internal `/maps/` staff link to the existing locations
@@ -85,20 +76,17 @@ browser-side navigation, not HTTP 301 redirects; review the implications in
 
 ## Simplified project structure
 
-- Main HTML pages are at the project root; all blog pages are in `blog/`.
+- Main HTML pages are at the project root.
 - Images are in `assets/images/`; downloads are in `assets/documents/`.
 - Retired the duplicate source/output layout and one-time import/build scripts.
   A verified complete pre-change backup is saved beside the project:
   `../FreedomFire-before-simplification-20260918-144146.zip`.
 - All pages can be edited directly. Shared header/footer regions are marked,
   and the optional checker detects inconsistencies between pages.
-- Renamed routes are recorded in `page-map.json`; archive query routes are in
-  `legacy-queries.json`. No publishing or DNS changes were made.
-- Compared all 118 pages and 169 assets with the pre-change backup: page text
-  and asset bytes are unchanged. CSS changes are whitespace-only.
-- All 119 HTML files pass link, asset, shared-layout, and compatibility-map
-  checks. The compatibility resolver passed 712 old-URL test cases, including
-  repository prefixes and the original archive-pagination query URLs.
+- Renamed routes are recorded in `page-map.json`. No publishing or DNS changes
+  were made.
+- All root HTML files pass link, asset, shared-layout, and compatibility-map
+  checks.
 
 ## Approved local font replacement
 
@@ -111,9 +99,6 @@ browser-side navigation, not HTTP 301 redirects; review the implications in
   vertical metrics. Brand colors, logo images, and page content are unchanged.
 - Checked all 24 main pages at 1280px desktop and 390px phone widths. Neither
   horizontal overflow nor overflowing text blocks remained in those checks.
-- Constrained fixed-width legacy blog object/embed elements to their container
-  width after checking archive pages on mobile. Historic video availability
-  remains unchanged; replacing old video formats is outside this font update.
 - Formspree is now configured for the Volunteer and Contact Us forms; details
   are documented below.
 
