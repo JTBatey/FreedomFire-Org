@@ -705,24 +705,16 @@ body[data-page="partnerships"] .partner-section .partner-section-title {
   gap:20px}
 .planned-giving-option {
   display:flex;
-  min-height:236px;
+  min-height:200px;
   flex-direction:column;
   padding:22px 24px;
   background:#fff;
   border-top:5px solid var(--rust);
   box-shadow:0 8px 24px #0000000d}
-.planned-giving-number {
-  margin:0 0 16px;
-  color:#bcaea7;
-  font-family:'Jost',Arial,sans-serif;
-  font-size:.8rem;
-  font-weight:800;
-  letter-spacing:.16em;
-  line-height:1}
 .planned-giving-option h3 {
   color:var(--heading-burgundy);
   margin-bottom:15px}
-.planned-giving-option p:not(.planned-giving-number) {
+.planned-giving-option p {
   line-height:1.65}
 .planned-giving-learn-more {
   margin-top:auto;
