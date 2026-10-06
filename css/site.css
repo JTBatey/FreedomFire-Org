@@ -842,6 +842,12 @@ h2 {
   background:white;
   color:var(--rust);
   border:1px solid var(--rust)}
+.site-footer .layout-grid {
+  --rows:10 !important;
+  --mobile-rows:16 !important}
+.site-footer .block-image {
+  --area:7/10/10/18 !important;
+  --mobile-area:13/3/17/9 !important}
 .site-footer p {
   margin:0;
   font-size:15.464px}
@@ -936,4 +942,55 @@ h2 {
   h3 {
     font-size:calc(16px + .0048 * min(100vh,900px));
     line-height:1.04}
+}
+.ourmanna-votd {
+  max-width:780px;
+  margin:clamp(26px,3vw,42px) auto clamp(38px,5vw,68px);
+  padding:clamp(26px,3.5vw,42px) clamp(24px,5vw,58px);
+  background:#f6f0eb;
+  color:var(--ink);
+  text-align:center;
+  box-shadow:0 10px 26px #00000012}
+.block-button .home-donate-link {
+  width:min(100%,240px);
+  height:auto;
+  padding:15px 24px}
+.ourmanna-votd-label {
+  margin:0 0 8px;
+  color:var(--rust);
+  font-family:'Jost',Arial,sans-serif;
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  line-height:1.2}
+.ourmanna-votd h2 {
+  margin-bottom:20px;
+  color:var(--heading-burgundy);
+  font-size:clamp(1.45rem,2.2vw,1.9rem)}
+.ourmanna-votd-quote {
+  margin:0 auto 18px;
+  font-size:clamp(1.1rem,1.75vw,1.35rem);
+  font-style:italic;
+  line-height:1.55}
+.ourmanna-votd-quote p {
+  margin:0}
+.ourmanna-votd-reference {
+  margin:0;
+  color:var(--rust);
+  font-family:'Jost',Arial,sans-serif;
+  font-size:.9rem;
+  font-weight:700;
+  line-height:1.35}
+.ourmanna-votd-reference span + span::before {
+  content:' · '}
+.ourmanna-votd-credit {
+  margin:13px 0 0;
+  font-size:.78rem;
+  line-height:1.35}
+@media(max-width:767px) {
+  .ourmanna-votd {
+    margin:26px 6vw 32px;
+    padding:26px 22px}
+  .ourmanna-votd h2 {
+    margin-bottom:16px}
 }

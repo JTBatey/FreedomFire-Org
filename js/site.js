@@ -52,3 +52,20 @@ document.querySelectorAll('.gallery a').forEach(link => link.addEventListener('c
   close.addEventListener('click', () => dialog.close()); dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); }); dialog.addEventListener('close', () => { dialog.remove(); link.focus(); });
   dialog.append(close,image); document.body.append(dialog); dialog.showModal();
 }));
+const ourMannaVerse = document.querySelector('[data-ourmanna-votd]');
+if (ourMannaVerse) {
+  fetch('https://beta.ourmanna.com/api/v1/get?format=json&order=daily', {headers:{Accept:'application/json'}})
+    .then(response => {
+      if (!response.ok) throw new Error('OurManna verse request failed');
+      return response.json();
+    })
+    .then(data => {
+      const details = data?.verse?.details;
+      if (!details || ![details.text, details.reference, details.version].every(value => typeof value === 'string' && value.trim())) return;
+      ourMannaVerse.querySelector('[data-ourmanna-text]').textContent = details.text;
+      ourMannaVerse.querySelector('[data-ourmanna-reference]').textContent = details.reference;
+      ourMannaVerse.querySelector('[data-ourmanna-version]').textContent = details.version;
+      ourMannaVerse.hidden = false;
+    })
+    .catch(() => {});
+}
