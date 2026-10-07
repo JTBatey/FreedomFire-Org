@@ -817,6 +817,21 @@ body[data-page="partnerships"] .partner-section .partner-section-title {
   font-weight:800;
   letter-spacing:.12em;
   text-transform:uppercase}
+.downtown-church-social {
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:18px}
+.downtown-church-social a {
+  display:grid;
+  width:40px;
+  height:40px;
+  place-items:center;
+  border-radius:50%;
+  color:#111;
+  text-decoration:none}
+.downtown-church-social a:focus-visible {outline:2px solid var(--rust);outline-offset:3px}
+.downtown-church-social svg {display:block;width:34px;height:34px}
 @media (max-width:767px) {
   .photo-library-album-grid {grid-template-columns:1fr;gap:16px}
   .photo-library-albums {padding:8px 6vw 24px}
