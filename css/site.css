@@ -984,10 +984,6 @@ h2 {
   color:var(--ink);
   text-align:center;
   box-shadow:0 10px 26px #00000012}
-.block-button .home-donate-link {
-  width:min(100%,240px);
-  height:auto;
-  padding:15px 24px}
 .ourmanna-votd-label {
   margin:0 0 8px;
   color:var(--rust);
