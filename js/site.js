@@ -52,20 +52,24 @@ document.querySelectorAll('.gallery a').forEach(link => link.addEventListener('c
   close.addEventListener('click', () => dialog.close()); dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); }); dialog.addEventListener('close', () => { dialog.remove(); link.focus(); });
   dialog.append(close,image); document.body.append(dialog); dialog.showModal();
 }));
-const ourMannaVerse = document.querySelector('[data-ourmanna-votd]');
-if (ourMannaVerse) {
-  fetch('https://beta.ourmanna.com/api/v1/get?format=json&order=daily', {headers:{Accept:'application/json'}})
+const goodWordsVerse = document.querySelector('[data-goodwords-votd]');
+if (goodWordsVerse) {
+  fetch('https://goodwords.today/api/daily-passage?translation=ESV', {headers:{Accept:'application/json'}})
     .then(response => {
-      if (!response.ok) throw new Error('OurManna verse request failed');
+      if (!response.ok) throw new Error('GoodWords verse request failed');
       return response.json();
     })
     .then(data => {
-      const details = data?.verse?.details;
-      if (!details || ![details.text, details.reference, details.version].every(value => typeof value === 'string' && value.trim())) return;
-      ourMannaVerse.querySelector('[data-ourmanna-text]').textContent = details.text;
-      ourMannaVerse.querySelector('[data-ourmanna-reference]').textContent = details.reference;
-      ourMannaVerse.querySelector('[data-ourmanna-version]').textContent = details.version;
-      ourMannaVerse.hidden = false;
+      if (![data?.text, data?.reference, data?.translation, data?.copyright, data?.sourceLink].every(value => typeof value === 'string' && value.trim())) return;
+      const sourceLink = new URL(data.sourceLink);
+      if (!['http:', 'https:'].includes(sourceLink.protocol)) return;
+      goodWordsVerse.querySelector('[data-goodwords-text]').textContent = data.text;
+      goodWordsVerse.querySelector('[data-goodwords-reference]').textContent = data.reference;
+      goodWordsVerse.querySelector('[data-goodwords-translation]').textContent = data.translation;
+      const copyright = goodWordsVerse.querySelector('[data-goodwords-copyright]');
+      copyright.textContent = data.copyright;
+      copyright.href = sourceLink.href;
+      goodWordsVerse.hidden = false;
     })
     .catch(() => {});
 }
